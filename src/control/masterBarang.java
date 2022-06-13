@@ -10,10 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Acer
- */
 public class masterBarang extends koneksi{
     public masterBarang(){
         super.setKoneksi();
