@@ -12,10 +12,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author Acer
- */
 public class control_transaksi extends koneksi{
     public control_transaksi(){
         super.setKoneksi();
