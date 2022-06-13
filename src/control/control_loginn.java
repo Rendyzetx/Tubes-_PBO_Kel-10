@@ -8,10 +8,6 @@ package control;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author Acer
- */
 public class control_loginn extends koneksi{
     public control_loginn(){
         super.setKoneksi();
