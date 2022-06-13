@@ -7,10 +7,7 @@ package control;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-/**
- *
- * @author Acer
- */
+
 public class koneksi {
     Connection con;
     Statement st;
