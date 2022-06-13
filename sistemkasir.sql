@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2020 at 02:26 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Waktu pembuatan: 13 Jun 2022 pada 18.19
+-- Versi server: 10.4.24-MariaDB
+-- Versi PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `barangpenjualan`
+-- Struktur dari tabel `barangpenjualan`
 --
 
 CREATE TABLE `barangpenjualan` (
@@ -38,7 +37,7 @@ CREATE TABLE `barangpenjualan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `barangpenjualan`
+-- Dumping data untuk tabel `barangpenjualan`
 --
 
 INSERT INTO `barangpenjualan` (`no_faktur`, `kode_barang`, `nama_barang`, `harga`, `qty`, `total1`) VALUES
@@ -82,7 +81,7 @@ INSERT INTO `barangpenjualan` (`no_faktur`, `kode_barang`, `nama_barang`, `harga
 -- --------------------------------------------------------
 
 --
--- Table structure for table `masterbarang`
+-- Struktur dari tabel `masterbarang`
 --
 
 CREATE TABLE `masterbarang` (
@@ -93,7 +92,7 @@ CREATE TABLE `masterbarang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `masterbarang`
+-- Dumping data untuk tabel `masterbarang`
 --
 
 INSERT INTO `masterbarang` (`kode_barang`, `nama_barang`, `stok`, `harga`) VALUES
@@ -102,7 +101,7 @@ INSERT INTO `masterbarang` (`kode_barang`, `nama_barang`, `stok`, `harga`) VALUE
 ('A002', 'SARIMI AYAM BAWANG', 99, 2200),
 ('A003', 'MIE SUKSES GORENG AYAM BWG', 95, 3000),
 ('A004', 'DETOL HAND SANITIZER 100ml', 85, 15000),
-('A005', 'SENSI MASK ', 235, 2000),
+('A005', 'Masker', 235, 2000),
 ('A006', 'MIE SEDAAP GORENG', 84, 2500),
 ('A007', 'FITMEE MIE KOREA', 94, 19500),
 ('A008', 'COCA-COLA 1 Liter', 96, 13000),
@@ -113,7 +112,7 @@ INSERT INTO `masterbarang` (`kode_barang`, `nama_barang`, `stok`, `harga`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pelanggan`
+-- Struktur dari tabel `pelanggan`
 --
 
 CREATE TABLE `pelanggan` (
@@ -124,19 +123,18 @@ CREATE TABLE `pelanggan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pelanggan`
+-- Dumping data untuk tabel `pelanggan`
 --
 
 INSERT INTO `pelanggan` (`id_pelanggan`, `nama_pelanggan`, `alamat`, `nomor`) VALUES
 ('P0001', 'UMUM', 'UMUM', 'UMUM'),
-('P0002', 'AHOK', 'PEKALONGAN', '+6289626562656'),
-('P0003', 'PRABOWO', 'PEKALONGAN', '+62864964656'),
-('P0004', 'BASUKI', 'PEKALONGAN', '+6288928922');
+('P0002', 'GOPAY', 'www.gopay.com', '+6291293216'),
+('P0003', 'Dana', 'Dana', '+62864964656');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penjualan`
+-- Struktur dari tabel `penjualan`
 --
 
 CREATE TABLE `penjualan` (
@@ -151,45 +149,10 @@ CREATE TABLE `penjualan` (
   `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `penjualan`
---
-
-INSERT INTO `penjualan` (`no_faktur`, `kasir`, `id_pelanggan`, `nama_pelanggan`, `diskon`, `total`, `bayar`, `kembali`, `tanggal`) VALUES
-('F0001', 'Riswanda Himawan', 'P0002', 'AHOK', 0, 32500, 35000, 2500, '2020-03-22'),
-('F0002', 'Riswanda Himawan', 'P0002', 'UMUM', 0, 3000, 5000, 2000, '2020-03-22'),
-('F0003', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 4000, 5000, 1000, '2020-03-22'),
-('F0004', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 18000, 20000, 2000, '2020-03-22'),
-('F0005', 'Riswanda Himawan', 'P0003', 'PRABOWO', 0, 18500, 20000, 1500, '2020-03-22'),
-('F0006', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 12500, 15000, 2500, '2020-03-23'),
-('F0007', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 15000, 20000, 5000, '2020-03-23'),
-('F0008', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 2200, 3000, 800, '2020-03-23'),
-('F0009', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 10000, 10000, 0, '2020-03-23'),
-('F0010', 'Manx Asep', 'P0003', 'PRABOWO', 0, 25000, 30000, 5000, '2020-03-24'),
-('F0011', 'Manx Asep', 'P0003', 'UMUM', 0, 39000, 40000, 1000, '2020-03-24'),
-('F0012', 'Manx Asep', 'P0003', 'UMUM', 0, 2500, 3000, 500, '2020-03-24'),
-('F0013', 'Manx Asep', 'P0002', 'AHOK', 0, 15000, 20000, 5000, '2020-03-25'),
-('F0014', 'Manx Asep', 'P0002', 'UMUM', 0, 4000, 4000, 0, '2020-03-25'),
-('F0015', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 6000, 7000, 1000, '2020-03-26'),
-('F0016', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 10000, 10000, 0, '2020-03-27'),
-('F0017', 'Riswanda Himawan', 'P0002', 'AHOK', 0, 10000, 15000, 5000, '2020-03-27'),
-('F0018', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 10000, 15000, 5000, '2020-03-28'),
-('F0019', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 20000, 20000, 0, '2020-03-28'),
-('F0020', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 2500, 3000, 500, '2020-03-28'),
-('F0021', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 4000, 5000, 1000, '2020-03-29'),
-('F0022', 'Riswanda Himawan', 'P0002', 'AHOK', 0, 13000, 15000, 2000, '2020-03-29'),
-('F0023', 'Riswanda Himawan', 'P0002', 'UMUM', 0, 5000, 5000, 0, '2020-03-29'),
-('F0024', 'Riswanda Himawan', 'P0002', 'UMUM', 0, 7500, 10000, 2500, '2020-03-29'),
-('F0025', 'Riswanda Himawan', 'P0002', 'UMUM', 0, 2500, 3000, 500, '2020-03-29'),
-('F0026', 'Riswanda Himawan', 'P0002', 'UMUM', 0, 25000, 30000, 5000, '2020-03-29'),
-('F0027', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 2500, 3000, 500, '2020-03-29'),
-('F0028', 'Riswanda Himawan', 'P0001', 'UMUM', 0, 8500, 10000, 1500, '2020-03-29'),
-('F0029', 'Kamidi', 'P0001', 'UMUM', 0, 19500, 20000, 500, '2020-03-29');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -201,62 +164,60 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `nama`, `nohp`) VALUES
-(1, 'admin', 'admin', 'Riswanda Himawan', '+6289673449080'),
-(2, 'Asep', 'Asep', 'Manx Asep', '0854862659'),
-(3, 'kamidi', 'kamidi', 'Kamidi', '+628987242422');
+(1, 'admin', 'admin', 'Rizky', '+6289673449080');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `barangpenjualan`
+-- Indeks untuk tabel `barangpenjualan`
 --
 ALTER TABLE `barangpenjualan`
   ADD KEY `kode_barang` (`kode_barang`),
   ADD KEY `no_faktur` (`no_faktur`);
 
 --
--- Indexes for table `masterbarang`
+-- Indeks untuk tabel `masterbarang`
 --
 ALTER TABLE `masterbarang`
   ADD PRIMARY KEY (`kode_barang`);
 
 --
--- Indexes for table `pelanggan`
+-- Indeks untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
   ADD PRIMARY KEY (`id_pelanggan`);
 
 --
--- Indexes for table `penjualan`
+-- Indeks untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
   ADD PRIMARY KEY (`no_faktur`),
   ADD KEY `id_pelanggan` (`id_pelanggan`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `barangpenjualan`
+-- Ketidakleluasaan untuk tabel `barangpenjualan`
 --
 ALTER TABLE `barangpenjualan`
   ADD CONSTRAINT `barangpenjualan_ibfk_1` FOREIGN KEY (`kode_barang`) REFERENCES `masterbarang` (`kode_barang`);
 
 --
--- Constraints for table `penjualan`
+-- Ketidakleluasaan untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
   ADD CONSTRAINT `penjualan_ibfk_1` FOREIGN KEY (`id_pelanggan`) REFERENCES `pelanggan` (`id_pelanggan`);
