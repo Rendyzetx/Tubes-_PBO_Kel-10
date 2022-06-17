@@ -27,6 +27,7 @@ public class control_transaksi extends koneksi{
         }
     }
     
+    
     public void simpanPenjualan(String no_faktur,String kasir,String id_pelanggan,String namaPelanggan,int diskon,int total,int bayar,int kembali,String tgl) throws SQLException{
         String sql = "INSERT INTO penjualan VALUES('"+no_faktur+"','"+kasir+"','"+id_pelanggan+"','"+namaPelanggan+"','"+diskon+"','"+total+"','"+bayar+"','"+kembali+"','"+tgl+"')";
         st.executeUpdate(sql);
