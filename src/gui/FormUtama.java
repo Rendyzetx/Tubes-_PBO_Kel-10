@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gui;
 
 //import com.jtattoo.plaf.mint.MintLookAndFeel;
@@ -11,10 +7,7 @@ import control.utama;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- *
- * @author Acer
- */
+
 public class FormUtama extends javax.swing.JFrame {
 koneksi db;
 utama ut;
